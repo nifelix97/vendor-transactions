@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { FaArrowDown, FaArrowUp, FaCheckCircle, FaClock, FaTimesCircle, FaWallet } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp, FaCheckCircle, FaClock, FaSearch, FaTimesCircle, FaWallet } from 'react-icons/fa';
 import EmptyState from '../components/EmptyState';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSkeleton from '../components/LoadingSkeleton';
@@ -199,19 +199,7 @@ const TransactionPage = () => {
         {/* Search and Actions */}
         <div className="mb-4 sm:mb-6 flex flex-col gap-3 xs:gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative flex-1 max-w-full sm:max-w-md">
-            <svg
-              className="absolute left-2 xs:left-3 top-1/2 h-4 xs:h-5 w-4 xs:w-5 -translate-y-1/2 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <FaSearch className="absolute left-2 xs:left-3 top-1/2 h-4 xs:h-5 w-4 xs:w-5 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Search transactions..."
@@ -220,7 +208,7 @@ const TransactionPage = () => {
               className="w-full rounded-lg border border-gray-300 py-2 pl-8 xs:pl-10 pr-3 xs:pr-4 text-xs xs:text-sm focus:border-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-50/20"
             />
           </div>
-          <div className="relative flex gap-2">
+          <div className="relative flex gap-2 justify-end sm:justify-start">
             <div className="relative">
               <button 
                 onClick={() => setIsStatusDropdownOpen(!isStatusDropdownOpen)}

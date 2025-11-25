@@ -60,12 +60,12 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobileOpen }:
               <img 
                 src={logo} 
                 alt="VidariPay Logo" 
-                className="h-10 w-auto transition-opacity duration-300"
+                className="h-7 w-auto transition-opacity duration-300"
               />
             )}
             {isCollapsed && (
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-white">
-                <img src={log} alt="VidariPay Logo Icon" />
+              <div className="mx-auto flex h-7 w-7 items-center justify-center rounded-lg bg-white">
+                <img src={log} alt="VidariPay Logo Icon" className="h-5 w-5" />
               </div>
             )}
             

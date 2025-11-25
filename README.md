@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+Vidaripay Transaction History
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A standalone React web page that displays a list of Vidaripay transactions using data fetched from a mock API.
+This project was completed as part of the Phase 2 Technical Assessment.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fetches live transaction data from a mock API.
 
-## React Compiler
+Displays transaction history in a clean, user-friendly UI.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Handles loading and error states gracefully.
 
-## Expanding the ESLint configuration
+Formats amounts in currency format (e.g., 5,000 RWF).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Shows human-readable dates for transactions.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Status indicators with color codes:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🟢 Success
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🔴 Failed
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🟠 Pending
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Fully mobile responsive layout.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+(Optional) Filter transactions by status.
+
+🛠️ Tech Stack
+
+React + Vite
+
+TypeScript
+
+Tailwind CSS
+
+Fetch API / Axios for data fetching
+
+Vercel for deployment
+
+📡 API Endpoint
+
+Transaction data is fetched from the following mock API endpoint:
+
+[https://f776e1f2-7f74-4d4d-9ce7-5dfbfbf8b2b2.mock.pstmn.io/test-api/transactions/]
+
+💻 Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/nifelix97/vendor-transactions.git
+
+
+Navigate into the project directory:
+
+cd vendor-transactions
+
+
+Install dependencies:
+
+npm install
+
+
+Start the development server:
+
+npm run dev
+
+
+Open your browser at http://localhost:5173.
+
+🌐 Deployment
+
+The project is hosted on Vercel for easy live access.
+[View Live Demo](https://vendor-transactions.vercel.app/)

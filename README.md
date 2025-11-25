@@ -35,7 +35,7 @@ TypeScript
 
 Tailwind CSS
 
-Fetch API / Axios for data fetching
+Fetch() API
 
 Vercel for deployment
 

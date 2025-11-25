@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* primary color */
+  --color-primary-50: oklch(0.7016 0.1971 142.9);
+
+  /* secondary color */
+  --color-secondary-50: oklch(0.6349 0.1669 48.19)
+}

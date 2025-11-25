@@ -2,7 +2,6 @@ interface SummaryCardProps {
   title: string;
   amount: number;
   currency: string;
-  subtitle: string;
   iconColor: string;
   icon: React.ReactNode;
   amountColor?: string;
@@ -12,7 +11,6 @@ const SummaryCard = ({
   title, 
   amount, 
   currency, 
-  subtitle, 
   iconColor, 
   icon,
   amountColor = 'text-gray-900'
@@ -28,7 +26,6 @@ const SummaryCard = ({
       <p className={`mb-1 text-2xl font-bold ${amountColor}`}>
         {currency} {amount.toLocaleString()}
       </p>
-      <p className="text-xs text-gray-500">{subtitle}</p>
     </div>
   );
 };

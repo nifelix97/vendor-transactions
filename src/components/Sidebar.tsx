@@ -29,7 +29,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobileOpen }:
 
   return (
     <>
-      {/* Mobile Overlay */}
       {isMobileOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/50 lg:hidden"
@@ -37,7 +36,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobileOpen }:
         />
       )}
 
-      {/* Mobile Menu Button - Only show when closed */}
       {!isMobileOpen && (
         <button
           onClick={() => setIsMobileOpen(true)}
@@ -125,7 +123,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobileOpen }:
                 )}
               </div>
               
-              {/* Mobile Close Button - In row with profile */}
               {isMobileOpen && (
                 <button
                   onClick={() => setIsMobileOpen(false)}

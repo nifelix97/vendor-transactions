@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { FaCheckCircle, FaClock, FaTimesCircle } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp, FaCheckCircle, FaClock, FaTimesCircle, FaWallet } from 'react-icons/fa';
 import EmptyState from '../components/EmptyState';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSkeleton from '../components/LoadingSkeleton';
@@ -66,7 +66,6 @@ const TransactionPage = () => {
     return filteredTransactions.slice(startIndex, endIndex);
   }, [filteredTransactions, currentPage]);
 
-  // Reset to page 1 when filters change
   useMemo(() => {
     setCurrentPage(1);
   }, [activeTab, searchQuery, statusFilter]);
@@ -137,70 +136,27 @@ const TransactionPage = () => {
             title="TOTAL INCOME"
             amount={stats.totalIncome}
             currency={data.currency}
-            subtitle="From cash in"
             iconColor="bg-primary-50/40"
-            icon={
-              <svg
-                className="h-5 w-5 text-secondary-50"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v16m8-8H4"
-                />
-              </svg>
-            }
+            icon={<FaArrowUp className="h-5 w-5 text-secondary-50" />}
+            amountColor="text-secondary-50"
           />
           <SummaryCard
             title="TOTAL EXPENSES"
             amount={stats.totalExpenses}
             currency={data.currency}
-            subtitle="All expenses"
             iconColor="bg-red-50"
-            icon={
-              <svg
-                className="h-5 w-5 text-red-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M20 12H4"
-                />
-              </svg>
-            }
+            icon={<FaArrowDown className="h-5 w-5 text-red-600" />}
+            amountColor="text-red-600"
           />
           <SummaryCard
             title="TOTAL BALANCE"
             amount={stats.netBalance}
             currency={data.currency}
-            subtitle={stats.netBalance < 0 ? "Deficit" : "Surplus"}
             iconColor="bg-green-50"
             amountColor={
-              stats.netBalance < 0 ? "text-red-600" : "text-green-600"
+              stats.netBalance < 0 ? "text-red-600" : "text-primary-50"
             }
-            icon={
-              <svg
-                className="h-5 w-5 text-primary-50"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                />
-              </svg>
-            }
+            icon={<FaWallet className="h-5 w-5 text-primary-50" />}
           />
         </div>
 

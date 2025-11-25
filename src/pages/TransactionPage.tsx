@@ -125,8 +125,8 @@ const TransactionPage = () => {
           <h1 className="mb-1 text-xl xs:text-2xl sm:text-3xl font-bold text-primary-50">
             Financial Records
           </h1>
-          <p className="text-xs xs:text-sm text-gray-500">
-            Track and manage income and expenses
+          <p className="text-xs xs:text-sm text-gray-600">
+            Track all transactions
           </p>
         </div>
 
@@ -137,16 +137,16 @@ const TransactionPage = () => {
             amount={stats.totalIncome}
             currency={data.currency}
             iconColor="bg-primary-50/40"
-            icon={<FaArrowUp className="h-5 w-5 text-secondary-50" />}
-            amountColor="text-secondary-50"
+            icon={<FaArrowUp className="h-5 w-5 text-gray-600" />}
+            amountColor="text-gray-600"
           />
           <SummaryCard
             title="TOTAL EXPENSES"
             amount={stats.totalExpenses}
             currency={data.currency}
             iconColor="bg-red-50"
-            icon={<FaArrowDown className="h-5 w-5 text-red-600" />}
-            amountColor="text-red-600"
+            icon={<FaArrowDown className="h-5 w-5 text-gray-600" />}
+            amountColor="text-gray-600"
           />
           <SummaryCard
             title="TOTAL BALANCE"
@@ -154,9 +154,9 @@ const TransactionPage = () => {
             currency={data.currency}
             iconColor="bg-green-50"
             amountColor={
-              stats.netBalance < 0 ? "text-red-600" : "text-primary-50"
+              stats.netBalance < 0 ? "text-red-600" : "text-gray-600"
             }
-            icon={<FaWallet className="h-5 w-5 text-primary-50" />}
+            icon={<FaWallet className="h-5 w-5 text-gray-600" />}
           />
         </div>
 
@@ -262,7 +262,7 @@ const TransactionPage = () => {
                         className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                           statusFilter === status
                             ? 'bg-primary-50 text-white'
-                            : 'text-gray-700 hover:bg-gray-100'
+                            : 'text-gray-700 hover:bg-secondary-50/40'
                         }`}
                       >
                         {status === 'all' ? 'All Status' : status.charAt(0).toUpperCase() + status.slice(1)}
@@ -281,25 +281,25 @@ const TransactionPage = () => {
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Receipt #
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Recipient
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Type
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Amount
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Method
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Date
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-900">
                     Status
                   </th>
                 </tr>
@@ -310,11 +310,11 @@ const TransactionPage = () => {
                     key={transaction.id}
                     className="transition-colors hover:bg-gray-50"
                   >
-                    <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-primary-50">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-600">
                       {transaction.id}
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-sm font-medium text-gray-600">
                         {transaction.recipient}
                       </div>
                     </td>
@@ -325,7 +325,7 @@ const TransactionPage = () => {
                         .toUpperCase() +
                         transaction.type.replace("_", " ").slice(1)}
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 text-sm font-semibold text-primary-50">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm font-semibold text-gray-600">
                       {data.currency} {transaction.amount.toLocaleString()}
                     </td>
                     <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-600">

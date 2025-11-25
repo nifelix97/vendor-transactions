@@ -25,7 +25,7 @@ Status indicators with color codes:
 
 Fully mobile responsive layout.
 
-(Optional) Filter transactions by status.
+Filter transactions by status.
 
 🛠️ Tech Stack
 

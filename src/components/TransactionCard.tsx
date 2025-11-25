@@ -79,13 +79,13 @@ const TransactionCard = ({ transaction, onClick }: TransactionCardProps) => {
         ${onClick ? 'cursor-pointer' : ''}
       `}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/5 to-secondary-50/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary-50/5 to-secondary-50/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative flex items-start justify-between gap-4">
         <div className="flex flex-1 items-start gap-4">
           <div className={`
             flex h-12 w-12 shrink-0 items-center justify-center rounded-xl 
-            bg-gradient-to-br from-gray-50 to-gray-100 text-2xl font-semibold
+            bg-linear-to-br from-gray-50 to-gray-100 text-2xl font-semibold
             shadow-sm transition-transform duration-300 group-hover:scale-110
             ${getTypeColor(transaction.type)}
           `}>

@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/vidaripay-logo-full.png';
-import log from '../assets/vidaripay-logo-icon.png';
+import log from '../assets/Vidaripay-logo-icon.png';
 
 interface SidebarProps {
   isCollapsed: boolean;
